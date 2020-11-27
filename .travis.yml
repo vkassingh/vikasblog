@@ -1,1 +1,10 @@
+language: Python
+Python: "3.7"
+services: - docker
+before_script: pip install docker-compose
+script: -docker -compose run app sh -c "python manage.py test && flake8"
 
+#download the latest version of the linttool flake8
+#create a [.flake8 ] file in the python project
+#[flake8]
+# excldue = migrations, manage.py, settings.py
